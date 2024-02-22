@@ -38,8 +38,10 @@ nav ul li a {
 nav ul li a:hover {
   background-color: #34495e;
   background: linear-gradient(to bottom, #34495e 0%, #2c3e50 100%);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Larger shadow for hover effect */
-  transform: translateY(-2px); /* Slight raise on hover */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  /* Larger shadow for hover effect */
+  transform: translateY(-2px);
+  /* Slight raise on hover */
   text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
 }
 
