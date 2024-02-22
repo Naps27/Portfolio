@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f2f7fd;
+  text-align: center;
+}
+
+header {
+  background: linear-gradient(to right, #34495e, #2c3e50);
+  padding: 20px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+  list-style: none;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: #34495e;
+  background: linear-gradient(to bottom, #34495e 0%, #2c3e50 100%);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Larger shadow for hover effect */
+  transform: translateY(-2px); /* Slight raise on hover */
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
+}
+
+.hero {
+  text-align: center;
+  padding: 20px;
+  padding-bottom: 1px;
+  color: #34495e;
+}
+
+.about-me,
+.projects,
+.contact {
+  margin: 40px auto;
+  width: 100%;
+  max-width: 800px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.projects .project {
+  margin-bottom: 20px;
+}
+
+.projects .project h3 {
+  margin-bottom: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #2c3e50;
+  color: #fff;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+form button[type="submit"] {
+  background-color: #2980b9;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button[type="submit"]:hover {
+  background-color: #3498db;
+}
+
+.tech-list {
+  margin-top: 20px;
+}
+
+.tech-list li {
+  text-align: center;
+  list-style-type: none;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.tech-list li::before {
+  content: "●";
+  margin-right: 5px;
+  color: #2980b9;
+}
