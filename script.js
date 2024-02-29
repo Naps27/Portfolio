@@ -1,65 +1,97 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const navLinks = document.querySelectorAll("nav ul li a");
-  const sections = document.querySelectorAll("section");
+class StickyNavigation {
+	constructor() {
+		this.currentId = null;
+		this.currentTab = null;
+		this.tabContainerHeight = 70;
+		$(".hero-tab").click((event) => {
+			this.onTabClick(event, $(event.target));
+		});
+		$(window).scroll(() => {
+			this.onScroll();
+		});
+		$(window).resize(() => {
+			this.onResize();
+		});
+		this.setSliderCss();
+	}
 
-  // Add 'active' class to all sections initially
-  sections.forEach((section) => {
-    section.classList.add("active");
-  });
+	onTabClick(event, element) {
+		event.preventDefault();
+		let isHomeTab = element.attr("href") === "#tab-home";
+		$(".hero-tab").removeClass("active");
+		if (!isHomeTab) {
+			element.addClass("active");
+		}
+		let scrollTop = isHomeTab
+			? 0
+			: $(element.attr("href")).offset().top - this.tabContainerHeight + 1;
+		$("html, body").animate({ scrollTop: scrollTop }, 600);
+	}
 
-  navLinks.forEach((link) => {
-    link.addEventListener("click", function (event) {
-      event.preventDefault();
+	onScroll() {
+		this.checkTabContainerPosition();
+		this.findCurrentTabSelector();
+		this.setSliderCss();
+	}
 
-      const targetId = link.getAttribute("href").substring(1);
-      const targetSection = document.getElementById(targetId);
+	onResize() {
+		if (this.currentId) {
+			this.setSliderCss();
+		}
+	}
 
-      if (targetId === "home") {
-        // Add 'active' class to all sections if 'Home' is clicked
-        sections.forEach((section) => {
-          section.classList.add("active");
-        });
-      } else {
-        const sectionTop = targetSection.offsetTop;
-        const sectionHeight = targetSection.offsetHeight;
-        const windowHeight = window.innerHeight;
-        let scrollOffset;
+	checkTabContainerPosition() {
+		let offset =
+			$(".hero-tabs").offset().top +
+			$(".hero-tabs").height() -
+			this.tabContainerHeight;
+		if ($(window).scrollTop() > offset) {
+			$(".hero-tabs-container").addClass("hero-tabs-container--top");
+		} else {
+			$(".hero-tabs-container").removeClass("hero-tabs-container--top");
+		}
+	}
 
-        if (sectionHeight < windowHeight) {
-          scrollOffset = sectionTop;
-        } else {
-          scrollOffset = sectionTop - (windowHeight - sectionHeight) / 2;
-        }
+	findCurrentTabSelector() {
+		let newCurrentId = null;
+		let newCurrentTab = null;
+		$(".hero-tab").each(function () {
+			let id = $(this).attr("href");
+			let offsetTop = $(id).offset().top - this.tabContainerHeight;
+			let offsetBottom =
+				$(id).offset().top + $(id).height() - this.tabContainerHeight;
+			if (
+				$(window).scrollTop() >= offsetTop &&
+				$(window).scrollTop() < offsetBottom
+			) {
+				newCurrentId = id;
+				newCurrentTab = $(this);
+			}
+		});
 
-        window.scrollTo({
-          top: scrollOffset,
-          behavior: "smooth"
-        });
+		if (
+			newCurrentId &&
+			(this.currentId !== newCurrentId || this.currentId === null)
+		) {
+			$(".hero-tab").removeClass("active");
+			this.currentId = newCurrentId;
+			this.currentTab = newCurrentTab;
+			this.currentTab.addClass("active");
+		}
+	}
 
-        sections.forEach((section) => {
-          if (section === targetSection) {
-            section.classList.add("active");
-          } else {
-            section.classList.remove("active");
-          }
-        });
-      }
-    });
-  });
+	setSliderCss() {
+		let width = 0;
+		let left = 0;
+		if (this.currentTab) {
+			width = this.currentTab.css("width");
+			left = this.currentTab.offset().left;
+		}
+		$(".hero-tab-slider").css("width", width);
+		$(".hero-tab-slider").css("left", left);
+	}
+}
 
-  // Scroll to top when 'Home' is clicked
-  const homeLink = document.getElementById("home-link");
-  homeLink.addEventListener("click", function (event) {
-    event.preventDefault();
-
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-
-    // Add 'active' class to all sections when 'Home' is clicked
-    sections.forEach((section) => {
-      section.classList.add("active");
-    });
-  });
+$(document).ready(function () {
+	new StickyNavigation();
 });
