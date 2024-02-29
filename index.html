@@ -5,89 +5,81 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
-  <header>
-    <nav>
-      <ul class="main-nav">
-        <li class="main-nav"><a href="#home" id="home-link">Home</a></li>
-        <li class="main-nav"><a href="#about">About</a></li>
-        <li class="icon"><img src="imgs/n_apoleonieontransparent.png" alt="Icon"></li>
-        <li class="main-nav"><a href="#projects">Projects</a></li>
-        <li class="main-nav"><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+<section class="hero-tabs">
+	<h1>My Web Dev Portfolio</h1>
+	<h3>Hello, I'm Andrew</h3>
+	<h3> I'm an aspiring Front-End web developer</h3>
+	<div class="hero-tabs-container">
+		<a class="hero-tab" href="#tab-home">Home</a>
+		<a class="hero-tab" href="#tab-about">About</a>
+		<a class="hero-tab" href="#tab-projects">Projects</a>
+		<a class="hero-tab" href="#tab-contact">Contact</a>
+		<span class="hero-tab-slider"></span>
+	</div>
+</section>
 
-  <section id="home">
-    <div class="hero">
-      <h1>My Web Dev Portfolio</h1>
-      <p>I'm an aspiring Front-End web developer</p>
-    </div>
-  </section>
+<main class="main">
+	<section class="slide" id="tab-about">
+		<div class="about">
+			<h2>About Me</h2>
+			<p class="about-text">I love coding and creating exciting web experiences.</p>
+			<p class="about-text">Here are some of the technologies I enjoy working with:</p>
+			<ul class="tech-list">
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>JavaScript</li>
+				<li>React</li>
+				<li>Node.js</li>
+			</ul>
+		</div>
+	</section>
 
-  <section id="about">
-    <div class="about-me">
-      <h2>About Me</h2>
-      <p>I love coding and creating exciting web experiences.</p>
-      <p>Here are some of the technologies I enjoy working with:</p>
-      <ul class="tech-list">
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-        <li>React</li>
-        <li>Node.js</li>
-      </ul>
-    </div>
-  </section>
+	<section class="slide" id="tab-projects">
+		<div class="projects">
+			<h2>My Projects</h2>
+			<div class="project-grid">
+				<a href="project1.html" class="project">
+					<h3 class="project-title">Simple Poem Page</h3>
+					<p class="project-description">A small school assignment showcasing a public domain poem</p>
+				</a>
+				<a href="project2.html" class="project">
+					<h3 class="project-title">Commission Website</h3>
+					<p class="project-description">Commission website for an artist friend</p>
+				</a>
+				<a href="project3.html" class="project">
+					<h3 class="project-title">Commission Website</h3>
+					<p class="project-description">Commission website for an artist friend</p>
+				</a>
+				<a href="project4.html" class="project">
+					<h3 class="project-title">Commission Website</h3>
+					<p class="project-description">Commission website for an artist friend</p>
+				</a>
+			</div>
+		</div>
+	</section>
 
-  <section id="projects">
-    <div class="projects">
-      <h2>My Projects</h2>
-      <div class="project">
-        <h3 class="project-title">Simple Poem Page</h3>
-        <p class="project-description">A small school assignment showcasing a public domain poem</p>
-        <a href="#">View Project</a>
-      </div>
-      <div class="project">
-        <h3 class="project-title">Commission Website</h3>
-        <p class="project-description">Commission website for an artist friend</p>
-        <a href="#">View Project</a>
-      </div>
-      <div class="project">
-        <h3 class="project-title">Commission Website</h3>
-        <p class="project-description">Commission website for an artist friend</p>
-        <a href="#">View Project</a>
-      </div>
-      <div class="project">
-        <h3 class="project-title">Commission Website</h3>
-        <p class="project-description">Commission website for an artist friend</p>
-        <a href="#">View Project</a>
-      </div>
-      <!-- Add more projects as needed -->
-    </div>
-  </section>
+	<section class="slide" id="tab-contact">
+		<div class="contact">
+			<h2>Contact Me</h2>
+			<p>Feel free to reach out to me for any inquiries or collaborations!</p>
+			<form action="#" class="contact-form">
+				<div class="form-group">
+					<label for="name">Name:</label>
+					<input type="text" id="name" name="name" required>
+				</div>
+				<div class="form-group">
+					<label for="email">Email:</label>
+					<input type="email" id="email" name="email" required>
+				</div>
+				<div class="form-group">
+					<label for="message">Message:</label>
+					<textarea id="message" name="message" required></textarea>
+				</div>
+				<button type="submit" class="btn">Send Message</button>
+			</form>
+		</div>
+	</section>
 
-  <section id="contact">
-    <div class="contact">
-      <h2>Contact Me</h2>
-      <p>Feel free to reach out to me for any inquiries or collaborations!</p>
-      <form action="#">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2024 Andrew Napoleone</p>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-
+</main>
+<script src="script.js"></script>
 </html>
