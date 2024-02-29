@@ -1,7 +1,9 @@
 @charset "UTF-8";
+
 body {
   font-family: "Century Gothic", "Lato", sans-serif;
   color: #fff;
+  margin: 0;
 }
 
 a {
@@ -58,7 +60,8 @@ a {
   justify-content: center;
   align-items: center;
   flex: 1;
-  color: #fff; /* Text color */
+  color: #fff;
+  /* Text color */
   letter-spacing: 0.1rem;
   transition: all 0.5s ease;
   font-size: 0.8rem;
@@ -77,16 +80,20 @@ a {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 2px; /* Adjust the thickness of the underline */
-  background-color: #0275d8; /* Adjust the color of the underline */
+  height: 2px;
+  /* Adjust the thickness of the underline */
+  background-color: #0275d8;
+  /* Adjust the color of the underline */
   transition: left 0.5s ease;
 }
 
 .hero-tab-slider {
   position: absolute;
   bottom: 0;
-  height: 2px; /* Height of the indicator */
-  background-color: #fff; /* Color of the indicator */
+  height: 2px;
+  /* Height of the indicator */
+  background-color: #fff;
+  /* Color of the indicator */
   transition: left 0.5s ease;
 }
 
@@ -282,9 +289,11 @@ a {
   .hero-tabs h1 {
     font-size: 3rem;
   }
+
   .hero-tabs h3 {
     font-size: 1rem;
   }
+
   .hero-tab {
     font-size: 1rem;
   }
