@@ -181,13 +181,13 @@ a {
 .contact h2 {
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #333;
+  color: #ffffff;
   text-transform: uppercase;
 }
 
 .contact p {
   margin-bottom: 40px;
-  color: #666;
+  color: #ffffff;
 }
 
 .contact-form {
@@ -204,7 +204,7 @@ a {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
-  color: #333;
+  color: #ffffff;
 }
 
 .form-group input,
